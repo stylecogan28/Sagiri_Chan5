@@ -28,9 +28,9 @@ const speed = require('performance-now')
 prefix = '!' // Kalo prefixnya mau di ganti, ganti aja kak, gpp
 const vcard = 'BEGIN:VCARD\n' // MetaData of Contacts Card
             + 'VERSION:3.0\n' 
-            + 'FN:Style Cogan\n' // Full Name
-            + 'ORG:♥SAGIRI CHAN II♥;\n' // The Organization Of The Contact
-            + 'TEL;type=CELL;type=VOICE;waid=6289509938750:+0895-0993-8750\n' // WhatsApp ID + Phone Number
+            + 'FN:+StyleCogan\n' // Full Name
+            + 'ORG:SAGIRI CHAN 2;\n' // The Organization Of The Contact
+            + 'TEL;type=CELL;type=VOICE;waid=089509938750:+0895-0993-8750\n' // WhatsApp ID + Phone Number
             + 'END:VCARD'
 blocked = ['6285282677885@s.whatsapp.net']
 
@@ -77,7 +77,7 @@ async function starts() {
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
-				teks = `Selamat datang di group semoga gajadi beban @${num.split('@')[0]}`
+				teks = `Selamat datang di group @${num.split('@')[0]}`
 				client.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
@@ -343,7 +343,7 @@ async function starts() {
               case 'owner':
                 case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-               client.sendMessage(from, 'Nih nomor pacar ku kak ehh ownerku, jika mau aku ke group kalian chat dia ya kak',MessageType.text, { quoted: mek} )
+               client.sendMessage(from, 'Nih nomor CO ku kak, jika mau aku ke group kalian chat dia ya kak',MessageType.text, { quoted: mek} )
                 break  
 				case 'okick':
 					if (!isGroup) return reply(mess.only.group)
